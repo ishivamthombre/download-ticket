@@ -1,0 +1,41 @@
+[
+  {
+    "id": "20031800230022",
+    "referenceId": "FT20030000086163",
+    "currency": "GBP",
+    "amount": "76,756.00",
+    "status": "PENDING",
+    "counterpartyName": "GlaxoSmithKline",
+    "productCode": "FUNDSTRANSFER",
+    "subProductCode": "TPT",
+    "transactionType": "NEW",
+    "valueDate": "2020-03-18",
+    "applicationDate": "2020-03-18"
+  },
+  {
+    "id": "20031800230021",
+    "referenceId": "FT20030000086162",
+    "currency": "GBP",
+    "amount": "230,023.00",
+    "status": "PENDING",
+    "counterpartyName": "GBP GB29 NWBK 6016 1081 9008 00 Current Account",
+    "productCode": "FUNDSTRANSFER",
+    "subProductCode": "INT",
+    "transactionType": "NEW",
+    "valueDate": "2020-03-18",
+    "applicationDate": "2020-03-18"
+  },
+  {
+    "id": "20030900229974",
+    "referenceId": "FT20030000086115",
+    "currency": "USD",
+    "amount": "5,000.00",
+    "status": "PENDING",
+    "counterpartyName": "Daimler33",
+    "productCode": "FUNDSTRANSFER",
+    "subProductCode": "MT103",
+    "transactionType": "NEW",
+    "valueDate": "2020-05-05",
+    "applicationDate": "2020-03-09"
+  }
+]

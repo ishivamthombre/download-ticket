@@ -1,0 +1,10 @@
+com\morfeus\banking\common\TemplateEditor\sample\DynamicTemplate1.class
+com\morfeus\banking\common\TemplateEditor\sample\DynamicTemplate2.class
+com\morfeus\banking\common\TemplateEditor\domain\Transactions.class
+com\morfeus\banking\common\TemplateEditor\util\TemplateUtil.class
+com\morfeus\banking\common\service\SampleValidation.class
+com\morfeus\banking\common\TemplateEditor\service\PayloadService.class
+com\morfeus\banking\common\TemplateEditor\sample\DynamicTemplate3.class
+com\morfeus\banking\common\service\SampleConnector.class
+com\morfeus\banking\common\TemplateEditor\service\PayloadService$1.class
+com\morfeus\banking\common\service\SamplePipeline.class

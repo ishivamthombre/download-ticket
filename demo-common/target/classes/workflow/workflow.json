@@ -1,0 +1,595 @@
+{
+  "entities":[
+    "banking.adjectival-phrases",
+    "sys.amount",
+    "sys.amount-range",
+    "banking.bank-name",
+    "banking.biller-category",
+    "banking.biller-name",
+    "banking.billGroup-id",
+    "banking.cheque-noOfLeafs",
+    "sys.city",
+    "sys.country",
+    "sys.currency-code",
+    "banking.customer-id",
+    "sys.date",
+    "sys.date-range",
+    "banking.deal-number",
+    "sys.distance-measurement",
+    "sys.email",
+    "banking.employment-type",
+    "banking.expenseType",
+    "sys.file-format",
+    "sys.frequency",
+    "sys.gender",
+    "sys.holiday-list",
+    "banking.interest-rate",
+    "sys.itemNumber",
+    "sys.locality",
+    "sys.location",
+    "sys.nick-name",
+    "sys.number",
+    "banking.otp",
+    "banking.payee-category",
+    "banking.payee-name",
+    "sys.person-name",
+    "sys.person-phone-number",
+    "sys.person-relationship",
+    "sys.person-salutation",
+    "banking.pin",
+    "insurance.policy-number",
+    "sys.postal-code",
+    "banking.product-account-number",
+    "banking.product-account-type",
+    "banking.product-card-number",
+    "banking.product-card-transaction-isBilledTxn",
+    "banking.product-card-type",
+    "banking.product-cheque-number",
+    "banking.product-list",
+    "banking.product-loan-number",
+    "banking.product-loan-type",
+    "banking.product-name",
+    "banking.product-statementMonth",
+    "banking.product-type",
+    "banking.property-id",
+    "banking.purpose",
+    "sys.quantity",
+    "banking.reference-number",
+    "banking.reward-points",
+    "sys.confirmation",
+    "sys.tenure",
+    "sys.time",
+    "banking.transaction-count",
+    "banking.transaction-description",
+    "banking.transaction-merchant",
+    "banking.transaction-spendCategory",
+    "banking.transaction-type",
+    "banking.unit-type",
+    "sys.user-details-type",
+    "banking.user-id"
+  ],
+  "node":[
+    {
+      "init":true,
+      "end":false,
+      "node_id":"Start",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"Start",
+      "description":"Beginning of workflow",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+
+        ],
+        "entity_id":"*",
+        "scripts":[
+          {
+            "script_input":[
+
+            ],
+            "script":"import groovy.json.JsonSlurper \n              return new JsonSlurper().parseText('{\"type\":\"node\",\"id\":\"Enter Mobile number\"}'); \n              ",
+            "scriptType":"groovy"
+          }
+        ],
+        "validation":{
+          "type":"regex",
+          "allowed_values":[
+
+          ],
+          "goto":[
+
+          ],
+          "secured":false,
+          "tfaSecured":false
+        }
+      },
+      "pipelines":[
+
+      ],
+      "outputs":[
+
+      ],
+      "partialStateSave":false,
+      "enableJumpNode":true,
+      "expectedEntities":[
+
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"banking.adjectival-phrases,sys.amount,sys.amount-range,banking.bank-name,banking.biller-category,banking.biller-name,banking.billGroup-id,banking.cheque-noOfLeafs,sys.city,sys.country,sys.currency-code,banking.customer-id,sys.date,sys.date-range,banking.deal-number,sys.distance-measurement,sys.email,banking.employment-type,banking.expenseType,sys.file-format,sys.frequency,sys.gender,sys.holiday-list,banking.interest-rate,sys.itemNumber,sys.locality,sys.location,sys.nick-name,sys.number,banking.otp,banking.payee-category,banking.payee-name,sys.person-name,sys.person-phone-number,sys.person-relationship,sys.person-salutation,banking.pin,insurance.policy-number,sys.postal-code,banking.product-account-number,banking.product-account-type,banking.product-card-number,banking.product-card-transaction-isBilledTxn,banking.product-card-type,banking.product-cheque-number,banking.product-list,banking.product-loan-number,banking.product-loan-type,banking.product-name,banking.product-statementMonth,banking.product-type,banking.property-id,banking.purpose,sys.quantity,banking.reference-number,banking.reward-points,sys.confirmation,sys.tenure,sys.time,banking.transaction-count,banking.transaction-description,banking.transaction-merchant,banking.transaction-spendCategory,banking.transaction-type,banking.unit-type,sys.user-details-type,banking.user-id",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":true,
+      "node_id":"sys.cancellation",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"sys.cancellation",
+      "description":"Cancel or exit from current flow",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+          {
+            "sys_cancellation":"sys_cancellation"
+          }
+        ],
+        "entity_id":"sys.cancellation",
+        "scripts":[
+
+        ],
+        "validation":{
+          "type":"regex",
+          "allowed_values":[
+
+          ],
+          "goto":[
+
+          ],
+          "secured":false,
+          "tfaSecured":false
+        }
+      },
+      "pipelines":[
+
+      ],
+      "outputs":[
+        {
+          "id":"",
+          "type":"text",
+          "text":"The request has been cancelled, how else can I help you?",
+          "mode":"dynamic"
+        }
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+        "sys.cancellation"
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"sys.cancellation,banking.adjectival-phrases,sys.amount,sys.amount-range,banking.bank-name,banking.biller-category,banking.biller-name,banking.billGroup-id,banking.cheque-noOfLeafs,sys.city,sys.country,sys.currency-code,banking.customer-id,sys.date,sys.date-range,banking.deal-number,sys.distance-measurement,sys.email,banking.employment-type,banking.expenseType,sys.file-format,sys.frequency,sys.gender,sys.holiday-list,banking.interest-rate,sys.itemNumber,sys.locality,sys.location,sys.nick-name,sys.number,banking.otp,banking.payee-category,banking.payee-name,sys.person-name,sys.person-phone-number,sys.person-relationship,sys.person-salutation,banking.pin,insurance.policy-number,sys.postal-code,banking.product-account-number,banking.product-account-type,banking.product-card-number,banking.product-card-transaction-isBilledTxn,banking.product-card-type,banking.product-cheque-number,banking.product-list,banking.product-loan-number,banking.product-loan-type,banking.product-name,banking.product-statementMonth,banking.product-type,banking.property-id,banking.purpose,sys.quantity,banking.reference-number,banking.reward-points,sys.confirmation,sys.tenure,sys.time,banking.transaction-count,banking.transaction-description,banking.transaction-merchant,banking.transaction-spendCategory,banking.transaction-type,banking.unit-type,sys.user-details-type,banking.user-id",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":true,
+      "node_id":"Status",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"Status",
+      "description":"Show download status",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+
+        ],
+        "entity_id":"*",
+        "scripts":[
+
+        ],
+        "validation":{
+          "type":"regex",
+          "allowed_values":[
+
+          ],
+          "goto":[
+
+          ],
+          "secured":false,
+          "tfaSecured":false
+        }
+      },
+      "pipelines":[
+        {
+          "id":"",
+          "type":"webhook",
+          "webhookUrl":"https://8e1f-52-221-78-236.ngrok.io/sampleWebhookApp/download/status",
+          "webhookSecret":"xyz"
+        }
+      ],
+      "outputs":[
+
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"banking.adjectival-phrases,sys.amount,sys.amount-range,banking.bank-name,banking.biller-category,banking.biller-name,banking.billGroup-id,banking.cheque-noOfLeafs,sys.city,sys.country,sys.currency-code,banking.customer-id,sys.date,sys.date-range,banking.deal-number,sys.distance-measurement,sys.email,banking.employment-type,banking.expenseType,sys.file-format,sys.frequency,sys.gender,sys.holiday-list,banking.interest-rate,sys.itemNumber,sys.locality,sys.location,sys.nick-name,sys.number,banking.otp,banking.payee-category,banking.payee-name,sys.person-name,sys.person-phone-number,sys.person-relationship,sys.person-salutation,banking.pin,insurance.policy-number,sys.postal-code,banking.product-account-number,banking.product-account-type,banking.product-card-number,banking.product-card-transaction-isBilledTxn,banking.product-card-type,banking.product-cheque-number,banking.product-list,banking.product-loan-number,banking.product-loan-type,banking.product-name,banking.product-statementMonth,banking.product-type,banking.property-id,banking.purpose,sys.quantity,banking.reference-number,banking.reward-points,sys.confirmation,sys.tenure,sys.time,banking.transaction-count,banking.transaction-description,banking.transaction-merchant,banking.transaction-spendCategory,banking.transaction-type,banking.unit-type,sys.user-details-type,banking.user-id",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":false,
+      "node_id":"Confirmation",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"Confirmation",
+      "description":"Confirm template",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+
+        ],
+        "entity_id":"*",
+        "scripts":[
+          {
+            "script_input":[
+
+            ],
+            "script":"import groovy.json.JsonSlurper            \nif(\"true\".equalsIgnoreCase(sys_confirmation)){\nreturn new JsonSlurper().parseText('{\"type\":\"node\",\"id\":\"Status\"}');\n} else {           \nreturn new JsonSlurper().parseText('{\"type\":\"node\",\"id\":\"sys.cancellation\"}');\n}",
+            "scriptType":"groovy"
+          }
+        ],
+        "validation":{
+          "type":"groovy",
+          "secured":false,
+          "tfaSecured":false,
+          "goto":[
+            {
+              "type":"endFlow"
+            }
+          ],
+          "script":"import com.morfeus.common.cmm.CMM;\nimport com.morfeus.common.cmm.response.CMMResponse;\nimport com.morfeus.common.cmm.response.ResponseMessageWrapper;\nimport ai.active.fulfillment.webhook.data.response.Status;\nimport com.morfeus.common.message.util.MessageUtil;\nimport com.morfeus.workflow.WorkflowRequest;\nimport com.morfeus.workflow.base.Validator;\nimport org.apache.commons.lang3.StringUtils;\nimport org.springframework.stereotype.Component;\nimport ai.active.fulfillment.webhook.data.response.WorkflowValidationResponse;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n\nWorkflowValidationResponse responseMessageWrapper = new WorkflowValidationResponse();\nif(\"true\".equalsIgnoreCase(sys_confirmation) || \"false\".equalsIgnoreCase(sys_confirmation)){\n  responseMessageWrapper.setStatus(Status.SUCCESS);\n} else {\n  responseMessageWrapper.setStatus(Status.FAILED);\n}\nreturn responseMessageWrapper;"
+        }
+      },
+      "pipelines":[
+
+      ],
+      "outputs":[
+        {
+          "id":"",
+          "type":"template",
+          "template_id":"Ticket_download_confirm",
+          "mode":"dynamic"
+        }
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"banking.adjectival-phrases,sys.amount,sys.amount-range,banking.bank-name,banking.biller-category,banking.biller-name,banking.billGroup-id,banking.cheque-noOfLeafs,sys.city,sys.country,sys.currency-code,banking.customer-id,sys.date,sys.date-range,banking.deal-number,sys.distance-measurement,sys.email,banking.employment-type,banking.expenseType,sys.file-format,sys.frequency,sys.gender,sys.holiday-list,banking.interest-rate,sys.itemNumber,sys.locality,sys.location,sys.nick-name,sys.number,banking.otp,banking.payee-category,banking.payee-name,sys.person-name,sys.person-phone-number,sys.person-relationship,sys.person-salutation,banking.pin,insurance.policy-number,sys.postal-code,banking.product-account-number,banking.product-account-type,banking.product-card-number,banking.product-card-transaction-isBilledTxn,banking.product-card-type,banking.product-cheque-number,banking.product-list,banking.product-loan-number,banking.product-loan-type,banking.product-name,banking.product-statementMonth,banking.product-type,banking.property-id,banking.purpose,sys.quantity,banking.reference-number,banking.reward-points,sys.confirmation,sys.tenure,sys.time,banking.transaction-count,banking.transaction-description,banking.transaction-merchant,banking.transaction-spendCategory,banking.transaction-type,banking.unit-type,sys.user-details-type,banking.user-id",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":false,
+      "node_id":"View_Bookings",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"View_Bookings",
+      "description":"View user booikings",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+          {
+            "sys_number":"sys_number_View_Bookings"
+          }
+        ],
+        "entity_id":"sys.number",
+        "scripts":[
+          {
+            "script_input":[
+
+            ],
+            "script":"var Type = {\n    NODE: 'node',\n    CUSTOM: 'custom'\n  };\n  authStatus = {\n    type:  Type.NODE,\n    id: 'Confirmation'\n  };",
+            "scriptType":"javascript"
+          }
+        ],
+        "validation":{
+          "type":"javascript",
+          "secured":false,
+          "tfaSecured":false,
+          "goto":[
+            {
+              "type":"output"
+            }
+          ],
+          "script":"if (sys_number && (sys_number === '7223' || sys_number === '7770')) {\n              var Status = {\n                SUCCESS: 'success',\n                FAILED: 'error'\n              };\n              authStatus = {\n                status:  Status.SUCCESS\n              };\n            } else {\n              var Status = {\n                SUCCESS: 'success',\n                FAILED: 'error'\n              };\n              authStatus = {\n                status:  Status.FAILED\n              };\n            }"
+        }
+      },
+      "pipelines":[
+        {
+          "id":"",
+          "type":"webhook",
+          "webhookUrl":"https://8e1f-52-221-78-236.ngrok.io/sampleWebhookApp/view/bookings",
+          "webhookSecret":"xyz"
+        }
+      ],
+      "outputs":[
+        {
+          "id":"error",
+          "type":"text",
+          "text":"wrong input",
+          "mode":"dynamic"
+        }
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+        "sys.number"
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"sys.number",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":false,
+      "node_id":"Enter Mobile number",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"Enter Mobile number",
+      "description":"Validate user",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+          {
+            "sys_person_phone_number":"sys_person_phone_number_Enter_Mobile_number"
+          }
+        ],
+        "entity_id":"sys.person-phone-number",
+        "scripts":[
+          {
+            "script_input":[
+              {
+                "valueType":"entity_id",
+                "valueId":"sys.person-phone-number"
+              }
+            ],
+            "script":"import groovy.json.JsonSlurper\n            if(entityValue.contains(\"98\") || sys_person_phone_number.contains(\"98\")){ \n              return new JsonSlurper().parseText('{\"type\":\"node\",\"id\":\"Validate_Otp\"}');\n            } else { \n          return new JsonSlurper().parseText('{\"type\":\"node\",\"id\":\"Enter Mobile number\"}');\n        }\n      ",
+            "scriptType":"groovy"
+          }
+        ],
+        "validation":{
+          "type":"java",
+          "secured":false,
+          "tfaSecured":false,
+          "className":"com.morfeus.banking.common.service.SampleValidation",
+          "goto":[
+
+          ]
+        }
+      },
+      "pipelines":[
+        {
+          "id":"Enter Mobile number",
+          "metadata":"",
+          "goto":{
+            "id":"Validate_Otp",
+            "type":"node"
+          }
+        },
+        {
+          "id":"",
+          "type":"java",
+          "metadata":"",
+          "goto":{
+            "id":"com.morfeus.banking.common.service.SamplePipeline",
+            "type":"java"
+          }
+        }
+      ],
+      "outputs":[
+
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+        "sys.person-phone-number"
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"sys.person-phone-number",
+      "keyboard_type":"NONE"
+    },
+    {
+      "init":false,
+      "end":false,
+      "node_id":"Validate_Otp",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"Validate_Otp",
+      "description":"Validate otp node",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+          {
+            "banking_otp":"banking_otp_Validate_Otp"
+          }
+        ],
+        "entity_id":"banking.otp",
+        "scripts":[
+          {
+            "script_input":[
+
+            ],
+            "script":"com.morfeus.banking.common.service.SampleConnector",
+            "scriptType":"java"
+          }
+        ],
+        "validation":{
+          "type":"regex",
+          "expression":"^[0-9]{6}$",
+          "allowed_values":[
+
+          ],
+          "goto":[
+            {
+              "type":"output"
+            }
+          ],
+          "secured":false,
+          "tfaSecured":false
+        }
+      },
+      "pipelines":[
+
+      ],
+      "outputs":[
+        {
+          "id":"error",
+          "type":"text",
+          "text":"Invalid Otp! Please enter the correct otp",
+          "mode":"dynamic"
+        },
+        {
+          "id":"validated",
+          "type":"text",
+          "text":"Otp Validated",
+          "mode":"dynamic"
+        },
+        {
+          "id":"",
+          "type":"text",
+          "text":"Please enter the otp sent to your registered mobile number",
+          "mode":"dynamic"
+        }
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+        "banking.otp"
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"banking.otp",
+      "keyboard_type":"PWD"
+    },
+    {
+      "init":false,
+      "end":true,
+      "node_id":"error",
+      "parent_node_id":"",
+      "previous_node_id":"",
+      "step_code":"",
+      "workflow_transaction_type":"",
+      "name":"error",
+      "description":"Error Node",
+      "last_modified":"",
+      "input_definition":{
+        "id":"",
+        "customer_preference_id":[
+
+        ],
+        "entity_id":"*",
+        "scripts":[
+
+        ],
+        "validation":{
+          "type":"regex",
+          "allowed_values":[
+
+          ],
+          "goto":[
+
+          ],
+          "secured":false,
+          "tfaSecured":false
+        }
+      },
+      "pipelines":[
+
+      ],
+      "outputs":[
+        {
+          "id":"",
+          "type":"text",
+          "text":"Something went wrong while processing your request. Pls try after sometime",
+          "mode":"dynamic"
+        }
+      ],
+      "fetchPendingWorkflow":false,
+      "expectedEntities":[
+
+      ],
+      "eeSelectionRules":[
+        {
+          "alternative":[
+
+          ]
+        }
+      ],
+      "trinityEntitiesOrder":"banking.adjectival-phrases,sys.amount,sys.amount-range,banking.bank-name,banking.biller-category,banking.biller-name,banking.billGroup-id,banking.cheque-noOfLeafs,sys.city,sys.country,sys.currency-code,banking.customer-id,sys.date,sys.date-range,banking.deal-number,sys.distance-measurement,sys.email,banking.employment-type,banking.expenseType,sys.file-format,sys.frequency,sys.gender,sys.holiday-list,banking.interest-rate,sys.itemNumber,sys.locality,sys.location,sys.nick-name,sys.number,banking.otp,banking.payee-category,banking.payee-name,sys.person-name,sys.person-phone-number,sys.person-relationship,sys.person-salutation,banking.pin,insurance.policy-number,sys.postal-code,banking.product-account-number,banking.product-account-type,banking.product-card-number,banking.product-card-transaction-isBilledTxn,banking.product-card-type,banking.product-cheque-number,banking.product-list,banking.product-loan-number,banking.product-loan-type,banking.product-name,banking.product-statementMonth,banking.product-type,banking.property-id,banking.purpose,sys.quantity,banking.reference-number,banking.reward-points,sys.confirmation,sys.tenure,sys.time,banking.transaction-count,banking.transaction-description,banking.transaction-merchant,banking.transaction-spendCategory,banking.transaction-type,banking.unit-type,sys.user-details-type,banking.user-id",
+      "keyboard_type":"NONE"
+    }
+  ]
+}
